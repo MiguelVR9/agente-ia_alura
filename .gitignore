@@ -20,9 +20,11 @@ __pycache__/
 .pytest_cache/
 
 # =====================================
-# NOTEBOOKS
+# NOTEBOOKS Y LOGS
 # =====================================
 .ipynb_checkpoints/
+logs/
+*.log
 
 # =====================================
 # CONFIGURACIÓN DE EDITORES Y SISTEMA
@@ -31,13 +33,13 @@ __pycache__/
 .idea/
 .DS_Store
 Thumbs.db
-*.log
 
 # =====================================
 # PERSISTENCIA LOCAL DE CHROMADB
 # =====================================
 chroma/
 chromadb/
+chroma_db_ris/
 
 # Streamlit
 .streamlit/secrets.toml
