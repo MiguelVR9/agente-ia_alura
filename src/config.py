@@ -1,56 +1,45 @@
 import os
+from pathlib import Path
 
 # ================================
-# PROYECTO
+# PROYECTO Y RUTAS BASE
 # ================================
 PROJECT_NAME = "RIS_RAG_Assistant"
 VERSION = "1.0.0"
 
-# ================================
-# RUTAS DE DIRECTORIOS Y LOGS
-# ================================
-DATA_DIR = "./data"
+# Obtiene la raíz del proyecto (mi-proyecto-rag/) desde src/config.py
+BASE_DIR = Path(__file__).resolve().parent.parent
 
-CHROMA_DB_DIR = "./chroma_db_ris"
+DATA_DIR = BASE_DIR / "data"
+CHROMA_DB_DIR = str(BASE_DIR / "chroma_db_ris")
 CHROMA_COLLECTION_NAME = "ris_knowledge_base"
 
-LOG_DIR = "./logs"
-RUTA_LOGS = "./logs/historial_evaluacion_rag.csv"
-FEEDBACK_PATH = "./logs/feedback_usuarios.csv"
+LOG_DIR = BASE_DIR / "logs"
+RUTA_LOGS = str(LOG_DIR / "historial_evaluacion_rag.csv")
+FEEDBACK_PATH = str(LOG_DIR / "feedback_usuarios.csv")
 
-# Creación automática de directorios necesarios para evitar runtime errors
+# Creación automática de directorios para evitar errores en ejecuciones limpias
 os.makedirs(DATA_DIR, exist_ok=True)
 os.makedirs(LOG_DIR, exist_ok=True)
 
 # ================================
 # DOCUMENTOS FUENTE
 # ================================
-FICHAS_TECNICAS_PATH = os.path.join(
-    DATA_DIR,
-    "Fichas_Tecnicas_Materiales_RIS.pdf"
-)
-
-MANUALES_PATH = os.path.join(
-    DATA_DIR,
-    "Manuales_Procesos_Procedimientos_RIS.pdf"
-)
-
-MATERIALES_EXCEL_PATH = os.path.join(
-    DATA_DIR,
-    "Especificaciones_Materiales_RIS.xlsx"
-)
-
-EQUIPOS_EXCEL_PATH = os.path.join(
-    DATA_DIR,
-    "Especificaciones_Equipos_RIS.xlsx"
-)
+FICHAS_TECNICAS_PATH = str(DATA_DIR / "Fichas_Tecnicas_Materiales_RIS.pdf")
+MANUALES_PATH = str(DATA_DIR / "Manuales_Procesos_Procedimientos_RIS.pdf")
+MATERIALES_EXCEL_PATH = str(DATA_DIR / "Especificaciones_Materiales_RIS.xlsx")
+EQUIPOS_EXCEL_PATH = str(DATA_DIR / "Especificaciones_Equipos_RIS.xlsx")
 
 # ================================
-# MODELOS IA
+# MODELOS IA Y LLM
 # ================================
 EMBEDDING_MODEL_NAME = "intfloat/multilingual-e5-base"
 RERANKER_MODEL_NAME = "BAAI/bge-reranker-v2-m3"
+
 LLM_MODEL_NAME = "gemini-3.5-flash"
+LLM_TEMPERATURE = 0.0
+LLM_MAX_RETRIES = 2
+MAX_REINTENTOS_API = 2
 
 # ================================
 # CHUNKING
@@ -65,6 +54,7 @@ IGNORE_TOP_PAGES_FICHAS = 1
 # RETRIEVAL Y BÚSQUEDA HÍBRIDA
 # ================================
 THRESHOLD_CONFIANZA = 0.60
+RETRIEVAL_THRESHOLD = 0.50
 
 TOP_K_BM25 = 20
 TOP_K_VECTOR = 20
@@ -85,24 +75,6 @@ EMBEDDING_BATCH_SIZE = 32
 FORCE_REINDEX = False
 
 # ================================
-# LLM Y GENERACIÓN
-# ================================
-LLM_TEMPERATURE = 0.0
-MAX_REINTENTOS_API = 2
-
-# Configuración del LLM
-LLM_MODEL_NAME = "gemini-3.5-flash"
-LLM_TEMPERATURE = 0.0
-LLM_MAX_RETRIES = 2
-
-# Umbral de Retrieval
-RETRIEVAL_THRESHOLD = 0.50
-
-# ================================
 # GEMINI API KEY
 # ================================
-try:
-    from google.colab import userdata
-    GEMINI_API_KEY = userdata.get("GEMINI_API_KEY")
-except Exception:
-    GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
+GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
