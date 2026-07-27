@@ -8,3 +8,4 @@ numpy
 scikit-learn
 pypdf
 python-dotenv
+langchain-text-splitters
