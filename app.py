@@ -43,14 +43,15 @@ def responder_chat(mensaje, historial):
         return f"⚠️ Ocurrió un error al procesar tu consulta: {str(e)}"
 
 # Interfaz de Gradio
+# Interfaz de Gradio
 demo = gr.ChatInterface(
     fn=responder_chat,
     title="Asistente Técnico RIS (RAG)",
-    description="Sistema RAG para consulta de manuales operativos y fichas técnicas con trazabilidad y citas.",
-    submit_btn="Enviar consulta",
-    retry_btn="Reintentar",
-    clear_btn="Limpiar chat",
-    theme="soft"
+    description="Haz tus consultas sobre fichas técnicas, manuales y especificaciones de equipos de RIS.",
+    examples=[
+        "¿Cuál es el procedimiento y preparación para corrosión severa con chorro de arena?",
+        "¿Cuál es el procedimiento para solicitar viáticos de viaje?"
+    ]
 )
 
 if __name__ == "__main__":
