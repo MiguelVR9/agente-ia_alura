@@ -1,13 +1,16 @@
-google-genai
-chromadb
-rank-bm25
-sentence-transformers
-gradio
-pandas
-numpy
-scikit-learn
-pypdf
-python-dotenv
-langchain-text-splitters
-huggingface-hub
+--extra-index-url https://download.pytorch.org/whl/cpu
 
+google-genai
+chromadb==0.5.5
+sentence-transformers==2.7.0
+transformers==4.41.2
+torch==2.2.2+cpu
+gradio==4.44.1
+rank-bm25==0.2.2
+pandas==2.2.2
+numpy==1.26.4
+scikit-learn==1.4.2
+pypdf==4.2.0
+python-dotenv==1.0.1
+langchain-text-splitters==0.2.2
+huggingface-hub==0.23.2
