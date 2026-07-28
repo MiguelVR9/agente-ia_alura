@@ -43,7 +43,6 @@ def responder_chat(mensaje, historial):
         return f"⚠️ Ocurrió un error al procesar tu consulta: {str(e)}"
 
 # Interfaz de Gradio
-# Interfaz de Gradio
 demo = gr.ChatInterface(
     fn=responder_chat,
     title="Asistente Técnico RIS (RAG)",
@@ -55,4 +54,10 @@ demo = gr.ChatInterface(
 )
 
 if __name__ == "__main__":
-    demo.launch()
+    port = int(os.environ.get("PORT", 7860))
+    demo.launch(
+        server_name="0.0.0.0",
+        server_port=port,
+        share=False,
+        show_error=True
+    )
