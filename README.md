@@ -72,12 +72,13 @@ El repositorio fue conectado a **Render Web Services** para integración y despl
 
 > **Nota Técnica de Infraestructura:** Este proyecto se entrega como una **Prueba de Concepto (PoC) funcional**. Debido a los límites de memoria de la capa gratuita de Render (512 MB RAM), el procesamiento local de embeddings en CPU mediante `sentence-transformers` puede alcanzar el umbral máximo de memoria en consultas complejas (*OOM*). Para un entorno de producción masivo, se recomienda migrar a un plan con mayor RAM o delegar la generación de embeddings a la API pública de Gemini.
 
-## Guía de Instalación y Ejecución Local
+## Guía de Instalación y Ejecución local
 
 Para ejecutar este proyecto localmente en tu máquina, sigue estos pasos:
 
-### 1. Clonar el repositorio
+
 ```bash
+### 1. Clonar el repositorio
 git clone [https://github.com/MiguelVR9/agente-ia_alura.git](https://github.com/MiguelVR9/agente-ia_alura.git)
 cd agente-ia_alura
 
