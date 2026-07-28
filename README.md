@@ -29,8 +29,8 @@ agente-ia_alura/
 ├── requirements.txt       # Dependencias del proyecto optimizadas para CPU
 ├── runtime.txt            # Especificación de versión de Python para producción
 └── README.md              # Documentación general del proyecto
-
-## 🚀 Fases del Proyecto: De la Idea al Despliegue
+```
+## Fases del Proyecto: De la Idea al Despliegue
 
 ### 1. Creación de Datos Técnicos Sintéticos (`/data`)
 Para simular un entorno corporativo de recubrimientos industriales sin exponer datos confidenciales, se generaron documentos técnicos sintéticos en formatos PDF y Excel:
@@ -70,9 +70,9 @@ El repositorio fue conectado a **Render Web Services** para integración y despl
 * **Ajuste de Entorno:** Se configuró el archivo `requirements.txt` con PyTorch versión CPU (`torch>=2.4.0`) para mantener la compatibilidad con `transformers` y `sentence-transformers`.
 * **Estado de la PoC:** La aplicación se encuentra desplegada y configurada correctamente en el puerto `10000`.
 
-> 💡 **Nota Técnica de Infraestructura:** Este proyecto se entrega como una **Prueba de Concepto (PoC) funcional**. Debido a los límites de memoria de la capa gratuita de Render (512 MB RAM), el procesamiento local de embeddings en CPU mediante `sentence-transformers` puede alcanzar el umbral máximo de memoria en consultas complejas (*OOM*). Para un entorno de producción masivo, se recomienda migrar a un plan con mayor RAM o delegar la generación de embeddings a la API pública de Gemini.
+> **Nota Técnica de Infraestructura:** Este proyecto se entrega como una **Prueba de Concepto (PoC) funcional**. Debido a los límites de memoria de la capa gratuita de Render (512 MB RAM), el procesamiento local de embeddings en CPU mediante `sentence-transformers` puede alcanzar el umbral máximo de memoria en consultas complejas (*OOM*). Para un entorno de producción masivo, se recomienda migrar a un plan con mayor RAM o delegar la generación de embeddings a la API pública de Gemini.
 
-## 🛠️ Guía de Instalación y Ejecución Local
+## Guía de Instalación y Ejecución Local
 
 Para ejecutar este proyecto localmente en tu máquina, sigue estos pasos:
 
