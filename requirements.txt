@@ -10,5 +10,4 @@ pypdf
 python-dotenv
 langchain-text-splitters
 huggingface-hub
-scikit-learn
-numpy
+
