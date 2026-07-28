@@ -1,11 +1,11 @@
 --extra-index-url https://download.pytorch.org/whl/cpu
 
-google-genai
+google-genai==1.30.0
+gradio==5.0.0
 chromadb==0.5.5
 sentence-transformers==2.7.0
 transformers==4.41.2
 torch==2.2.2+cpu
-gradio==4.44.1
 rank-bm25==0.2.2
 pandas==2.2.2
 numpy==1.26.4
